@@ -174,7 +174,7 @@ const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
-  to.matched.forEach((routeRecord) => {
+  to.matched.some((routeRecord) => {
     const perimeter = routeRecord.meta.perimeter;
     const Governess = routeRecord.meta.governess || RouteGoverness;
     const action = routeRecord.meta.perimeterAction || 'route';
